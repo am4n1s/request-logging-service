@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latency Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>HTTP Latency</h2>
+<canvas id="latencyChart" width="400" height="200"></canvas>
+
+<script>
+    async function loadData() {
+        const response = await fetch('/logs/metrics/latency');
+        const data = await response.json();
+
+        const ctx = document.getElementById('latencyChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Mean (ms)', 'Max (ms)'],
+                datasets: [{
+                    label: 'Latency',
+                    data: [data.mean, data.max],
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    loadData();
+</script>
+
+</body>
+</html>

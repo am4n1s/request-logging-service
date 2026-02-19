@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Request Logs Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<h1>Top 10 Slowest Requests</h1>
+
+<div th:if="${logs.isEmpty()}">
+    <p>No logs found. Make some requests first!</p>
+</div>
+
+<table th:if="${!logs.isEmpty()}">
+    <tr>
+        <th>Path</th><th>Method</th><th>Status</th><th>Duration (ms)</th><th>Created At</th>
+    </tr>
+    <tr th:each="log : ${logs}">
+        <td th:text="${log.path}"></td>
+        <td th:text="${log.method}"></td>
+        <td th:text="${log.status}"></td>
+        <td th:text="${log.duration}"></td>
+        <td th:text="${log.createdAt}"></td>
+    </tr>
+</table>
+</body>
+</html>

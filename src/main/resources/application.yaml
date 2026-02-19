@@ -1,0 +1,21 @@
+spring:
+  flyway:
+    enabled: true
+  application:
+    name: qazcodetask
+  datasource:
+    url: jdbc:postgresql://localhost:5432/logsdb
+    username: admin
+    password: password
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
