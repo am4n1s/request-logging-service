@@ -1,10 +1,10 @@
-package com.nurzhigit.amanov.qazcodetask;
+package com.example.requestlog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QazcodetaskApplicationTests {
+class RequestLogApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+.env
+prometheus/admin_password
+run.log

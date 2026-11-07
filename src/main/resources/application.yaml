@@ -2,7 +2,7 @@ spring:
   flyway:
     enabled: true
   application:
-    name: qazcodetask
+    name: request-log-service
   datasource:
     url: jdbc:postgresql://localhost:5432/logsdb
     username: admin
