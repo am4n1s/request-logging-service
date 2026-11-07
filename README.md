@@ -189,6 +189,3 @@ prometheus/prometheus.yml # scrape configuration
 - Provision Grafana dashboards and data source as code.
 - Containerize the application itself and add a CI pipeline.
 
-## License
-
-Add a license of your choice (for example MIT).
